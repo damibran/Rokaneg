@@ -38,12 +38,16 @@ public class Racket : KinematicBody2D
         MoveAndCollide(movementVelocity * movementDirection);
     }
 
-    // returns deviation in bounce vector
+    // returns deviation for bounce vector, if hit point on left side bend to left, right to right
     public Vector2 onRacketHitted(Vector2 collisionPos)
     {
+        // if hit point on left hand side - posetive, on right hand - negative
         float diff = collisionPos.x - Position.x;
         float halfWidth = RacketWidth / 2.0f;
+
+        // more to the edge bigger koefficient
         float k = diff/halfWidth;
+
         Vector2 res = Vector2.Up;
         return res.Rotated(Mathf.Deg2Rad(spreadAngle)* k);
     }
