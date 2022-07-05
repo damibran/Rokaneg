@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu.cs" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Main_scene_labels.tres" type="DynamicFont" id=3]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -8,63 +10,83 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="play_menu" type="MarginContainer" parent="menu_root"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="CenterContainer" type="CenterContainer" parent="menu_root/play_menu"]
-margin_right = 720.0
-margin_bottom = 1080.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="menu_root/play_menu/CenterContainer"]
-margin_left = 341.0
-margin_top = 530.0
-margin_right = 379.0
-margin_bottom = 550.0
-
-[node name="Random" type="Button" parent="menu_root/play_menu/CenterContainer/VBoxContainer"]
-margin_right = 38.0
-margin_bottom = 20.0
-text = "Play"
-
 [node name="main_menu" type="MarginContainer" parent="menu_root"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 menu_root_node_path = NodePath("..")
 
-[node name="CenterContainer" type="CenterContainer" parent="menu_root/main_menu"]
+[node name="VSplitContainer" type="VSplitContainer" parent="menu_root/main_menu"]
+margin_right = 720.0
+margin_bottom = 1080.0
+split_offset = 540
+
+[node name="Image" type="CenterContainer" parent="menu_root/main_menu/VSplitContainer"]
+margin_right = 720.0
+margin_bottom = 604.0
+
+[node name="TextureRect" type="TextureRect" parent="menu_root/main_menu/VSplitContainer/Image"]
+margin_left = 328.0
+margin_top = 270.0
+margin_right = 392.0
+margin_bottom = 334.0
+texture = ExtResource( 2 )
+
+[node name="Controls" type="CenterContainer" parent="menu_root/main_menu/VSplitContainer"]
+margin_top = 616.0
 margin_right = 720.0
 margin_bottom = 1080.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="menu_root/main_menu/CenterContainer"]
-margin_left = 286.0
-margin_top = 494.0
-margin_right = 433.0
-margin_bottom = 586.0
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_root/main_menu/VSplitContainer/Controls"]
+margin_left = 282.0
+margin_top = 152.0
+margin_right = 438.0
+margin_bottom = 312.0
 
-[node name="endless_level_button" type="Button" parent="menu_root/main_menu/CenterContainer/VBoxContainer"]
-margin_right = 147.0
-margin_bottom = 20.0
-text = "endless_level_button"
+[node name="Levels" type="Button" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_right = 156.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
+text = "Levels"
+flat = true
 
-[node name="Levels_button" type="Button" parent="menu_root/main_menu/CenterContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 147.0
-margin_bottom = 44.0
-text = "Levels_button"
+[node name="HSeparator" type="HSeparator" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 35.0
+margin_right = 156.0
+margin_bottom = 39.0
 
-[node name="options_button" type="Button" parent="menu_root/main_menu/CenterContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 147.0
-margin_bottom = 68.0
-text = "options_button"
+[node name="Endless" type="Button" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 43.0
+margin_right = 156.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+text = "Endless"
+flat = true
 
-[node name="quit_button" type="Button" parent="menu_root/main_menu/CenterContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 147.0
-margin_bottom = 92.0
-text = "quit_button"
+[node name="HSeparator2" type="HSeparator" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 78.0
+margin_right = 156.0
+margin_bottom = 82.0
 
-[connection signal="pressed" from="menu_root/main_menu/CenterContainer/VBoxContainer/endless_level_button" to="menu_root/main_menu" method="_on_endless_level_button_pressed"]
+[node name="Options" type="Button" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 86.0
+margin_right = 156.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 3 )
+text = "Options"
+flat = true
+
+[node name="HSeparator3" type="HSeparator" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 121.0
+margin_right = 156.0
+margin_bottom = 125.0
+
+[node name="Quit" type="Button" parent="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer"]
+margin_top = 129.0
+margin_right = 156.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="menu_root/main_menu/VSplitContainer/Controls/VBoxContainer/Endless" to="menu_root/main_menu" method="_on_endless_level_button_pressed"]
