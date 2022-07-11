@@ -24,15 +24,113 @@ extents = Vector2( 64, 8 )
 
 [node name="Map" type="Node2D" parent="."]
 
-[node name="Brick" type="StaticBody2D" parent="Map"]
-position = Vector2( 336, 664 )
+[node name="Row" type="Node2D" parent="Map"]
+
+[node name="Brick6" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 408, 664 )
 script = ExtResource( 4 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Map/Brick"]
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick6"]
 color = Color( 0.8, 0.639216, 0.639216, 1 )
 polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Brick"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick6"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick5" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 336, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick5"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick5"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick8" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 552, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick8"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick8"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick7" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 480, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick7"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick7"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick2" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 120, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick2"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick2"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick1" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 48, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick1"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick1"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick4" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 264, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick4"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick4"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick3" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 192, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick3"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick3"]
+position = Vector2( 28, 12 )
+shape = SubResource( 5 )
+
+[node name="Brick9" type="StaticBody2D" parent="Map/Row"]
+position = Vector2( 624, 664 )
+script = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/Row/Brick9"]
+color = Color( 0.8, 0.639216, 0.639216, 1 )
+polygon = PoolVector2Array( 0, 0, 56, 0, 56, 24, 0, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Row/Brick9"]
 position = Vector2( 28, 12 )
 shape = SubResource( 5 )
 
