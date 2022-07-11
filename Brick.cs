@@ -15,7 +15,7 @@ public class Brick : StaticBody2D
 
     public void onBrickHitted()
     {
-
+        QueueFree();
     }
 
 
