@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Main_scene_labels.tres" type="DynamicFont" id=1]
+[ext_resource path="res://end_restart.cs" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="root"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+end_menu_root_node_path = NodePath("..")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="root/MarginContainer"]
+margin_right = 720.0
+margin_bottom = 1080.0
+split_offset = 500
+
+[node name="CenterContainer" type="CenterContainer" parent="root/MarginContainer/VSplitContainer"]
+margin_right = 720.0
+margin_bottom = 553.0
+
+[node name="Label" type="Label" parent="root/MarginContainer/VSplitContainer/CenterContainer"]
+margin_left = 87.0
+margin_top = 260.0
+margin_right = 632.0
+margin_bottom = 313.0
+custom_fonts/font = ExtResource( 1 )
+text = "Unfortunetly u lose this Game.
+Try one more time!)"
+align = 1
+
+[node name="counter" type="Label" parent="root/MarginContainer/VSplitContainer/CenterContainer"]
+visible = false
+margin_left = 360.0
+margin_top = 269.0
+margin_right = 360.0
+margin_bottom = 283.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="root/MarginContainer/VSplitContainer"]
+margin_top = 565.0
+margin_right = 720.0
+margin_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="root/MarginContainer/VSplitContainer/CenterContainer2"]
+margin_left = 203.0
+margin_top = 220.0
+margin_right = 517.0
+margin_bottom = 294.0
+
+[node name="restart button" type="Button" parent="root/MarginContainer/VSplitContainer/CenterContainer2/VBoxContainer"]
+margin_right = 314.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 1 )
+text = "Restart Game"
+
+[node name="HSeparator" type="HSeparator" parent="root/MarginContainer/VSplitContainer/CenterContainer2/VBoxContainer"]
+margin_top = 35.0
+margin_right = 314.0
+margin_bottom = 39.0
+
+[node name="quit to main menu button" type="Button" parent="root/MarginContainer/VSplitContainer/CenterContainer2/VBoxContainer"]
+margin_top = 43.0
+margin_right = 314.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 1 )
+text = "quit to main menu"
+
+[connection signal="pressed" from="root/MarginContainer/VSplitContainer/CenterContainer2/VBoxContainer/restart button" to="root/MarginContainer" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="root/MarginContainer/VSplitContainer/CenterContainer2/VBoxContainer/quit to main menu button" to="root/MarginContainer" method="_on_quit_to_main_menu_button_pressed"]
